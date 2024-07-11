@@ -29,10 +29,7 @@ export default function SkillsCertifications() {
                     <li key={index}>
                         <h4>{certification.title}</h4>
                         <p className="source">{certification.source}</p>
-                        <p className="issued"> Issued: ({certification.issuedYear})</p>
-                        {certification.expiresYear && (
-                            <p className="expires"> Expires: ({certification.expiresYear})</p>
-                        )}
+                        <p className="time">{certification.issuedYear}</p>
                     </li>
                 ))}
             </ul>

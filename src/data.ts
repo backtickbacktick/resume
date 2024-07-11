@@ -104,7 +104,7 @@ const data: {
         },
         {
             page: 1,
-            companyName: 'Automatic Data Processing, Inc. (ADP)',
+            companyName: 'ADP',
             title: 'Senior Application Developer',
             description: [
                 'Led the team in code reviews, providing best practice recommendations to ensure high-quality code standards.',

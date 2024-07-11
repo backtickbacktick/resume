@@ -9,11 +9,12 @@
     -moz-osx-font-smoothing: grayscale;
     --accent-color: rgb(18, 99, 171);
     --accent-color-50: rgb(18, 99, 171, 0.5);
+    --accent-grey: #666;
     text-wrap: pretty;
 }
 
 html {
-    background-color: #666;
+    background-color: var(--accent-grey);
 }
 
 * {
@@ -84,6 +85,7 @@ header {
     position: relative;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     max-height: 2in;
     flex-shrink: 0;
     margin: 0 0 1rem;
@@ -133,6 +135,7 @@ header {
     .contact ul {
         @extend .flex-col;
         gap: 0.25rem;
+        text-align: right;
     }
 }
 
@@ -158,6 +161,11 @@ footer {
     width: 2in;
     gap: 1rem;
     flex-shrink: 0;
+
+    .time {
+        color: var(--accent-grey);
+        transform: skewX(-10deg);
+    }
 
     * + h2 {
         margin-top: 2rem;
@@ -232,8 +240,7 @@ footer {
 
     .company-time {
         @extend .flex-row;
-        justify-content: space-between;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .company {
@@ -241,13 +248,8 @@ footer {
     }
 
     .time {
-        @extend .flex-row;
-        gap: 1rem;
-        span {
-            display: inline-block;
-            color: #666;
-            transform: skewX(-10deg);
-        }
+        color: var(--accent-grey);
+        transform: skewX(-10deg);
     }
 }
 
@@ -267,9 +269,10 @@ footer {
     span:nth-child(2) {
         font-size: 1.5rem;
         font-weight: 200;
-        color: #666;
+        color: var(--accent-grey);
     }
 }
+
 footer {
     @extend .flex-row;
     justify-content: space-between;
@@ -282,7 +285,7 @@ footer {
 
     div:nth-child(2) {
         transform: skewX(-10deg);
-        color: grey;
+        color: var(--accent-grey);
     }
 
     div:nth-child(3) {
