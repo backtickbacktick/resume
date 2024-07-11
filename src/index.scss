@@ -7,7 +7,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    --accent-color: hsl(208, 81%, 37%);
+    --accent-color: rgb(18, 99, 171);
+    --accent-color-50: rgb(18, 99, 171, 0.5);
 }
 
 html {
@@ -125,18 +126,6 @@ header {
     .contact ul {
         @extend .flex-col;
         gap: 0.25rem;
-    }
-
-    &::before {
-        position: absolute;
-        bottom: -0.5rem;
-        content: ' ';
-        display: block;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, var(--accent-color) 10%, transparent, var(--accent-color) 90%),
-            #ccc;
-        margin: 0.5rem 0;
     }
 }
 
@@ -256,33 +245,12 @@ footer {
     position: relative;
     margin: 1rem auto 0;
 
-    &:before {
-        display: block;
-        position: absolute;
-        top: -3.5rem;
-        left: -1rem;
-        content: '“';
-        font-size: 10rem;
-        color: var(--accent-color);
-        opacity: 0.25;
-    }
-
-    &:after {
-        display: block;
-        position: absolute;
-        top: -0.75rem;
-        right: 0;
-        content: '”';
-        font-size: 10rem;
-        color: var(--accent-color);
-        opacity: 0.25;
-    }
-
     span:nth-child(1) {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 600;
         color: var(--accent-color);
     }
+
     span:nth-child(2) {
         font-size: 1.5rem;
         font-weight: 200;
