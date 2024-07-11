@@ -9,6 +9,7 @@
     -moz-osx-font-smoothing: grayscale;
     --accent-color: rgb(18, 99, 171);
     --accent-color-50: rgb(18, 99, 171, 0.5);
+    text-wrap: pretty;
 }
 
 html {
@@ -88,10 +89,16 @@ header {
     margin: 0 0 1rem;
     gap: 1rem;
     padding-bottom: 0.15in;
+    border-bottom: 1px solid var(--accent-color);
 
     .intro {
         flex: 0 0 100%;
         font-weight: 200;
+    }
+
+    svg {
+        width: 0.1in;
+        height: 0.1in;
     }
 
     .title {
@@ -221,6 +228,12 @@ footer {
                 border-left-color: var(--accent-color);
             }
         }
+    }
+
+    .company-time {
+        @extend .flex-row;
+        justify-content: space-between;
+        gap: 1rem;
     }
 
     .company {

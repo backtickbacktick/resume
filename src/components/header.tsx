@@ -1,4 +1,8 @@
-export default function Header({ hideIntro }: { hideIntro?: boolean }) {
+import { usePage } from './page';
+
+export default function Header() {
+    const page = usePage();
+
     return (
         <header>
             <div className="title">
@@ -14,15 +18,11 @@ export default function Header({ hideIntro }: { hideIntro?: boolean }) {
                         <a href="tel:+1-757-447-4447">757-447-4447</a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com/in/iambriansreed">linkedin.com/in/iambriansreed</a>
-                    </li>
-                    <li>
                         <a href="https://iambrian.com">iambrian.com</a>
                     </li>
-                    <li>Virginia Beach, VA</li>
                 </ul>
             </div>
-            {!hideIntro && (
+            {page === 1 && (
                 <p className="intro">
                     Senior Software Engineer with over 15 years of software development experience in local
                     Government, large corporations, and start-ups. Self-taught, autodidact with passion for

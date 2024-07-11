@@ -1,25 +1,17 @@
-import data, { SkillType } from '../data';
+import data from '../data';
 
 export default function SkillsCertifications() {
-    const skillTypes: SkillType[] = [
-        'Language',
-        'Framework',
-        'Library',
-        //'Tool',
-        // 'Other',
-    ];
-
     return (
         <section className="skills-certifications">
             <h2>Skills</h2>
             <ul>
-                {skillTypes.map((skillType) => (
-                    <li>
+                {data.skillTypes.map((skillType, index) => (
+                    <li key={index}>
                         <h4>{skillType}</h4>
                         <ul>
                             {data.skills
                                 .filter((s) => s.type === skillType)
-                                .sort((a, b) => (a.progress > b.progress ? -1 : 1))
+                                .sort((a, b) => (a.years > b.years ? -1 : 1))
                                 .map((skill, index) => (
                                     <li key={index}>
                                         <span className="title">{skill.title}</span>

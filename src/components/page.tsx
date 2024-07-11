@@ -1,5 +1,15 @@
-import { PropsWithChildren } from 'react';
+import { createContext, PropsWithChildren, useContext } from 'react';
 
-export default function Page(props: PropsWithChildren) {
-    return <div className="page">{props.children}</div>;
+const pageContext = createContext(1);
+
+export function usePage() {
+    return useContext(pageContext);
+}
+
+export default function Page(props: PropsWithChildren<{ page: number }>) {
+    return (
+        <div className="page">
+            <pageContext.Provider value={props.page}>{props.children}</pageContext.Provider>
+        </div>
+    );
 }

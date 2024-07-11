@@ -20,24 +20,25 @@ import Footer from './components/footer';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
-        <Page>
+        <Page page={1}>
             <Header />
             <main>
                 <SkillsCertifications />
-                <Experience page={1} />
+                <Experience />
             </main>
-            <Footer page={1} />
+            <Footer />
         </Page>
-        <Page>
-            <Header hideIntro />
+        <Page page={2}>
+            <Header />
             <main data-col>
-                <Experience page={2} />
+                <Experience continued />
+                <Experience volunteer />
                 <p className="quote">
                     <span>Everything is designed. Few things are designed well.</span>
                     <span className="source">- Me</span>
                 </p>
             </main>
-            <Footer page={2} />
+            <Footer />
         </Page>
     </React.StrictMode>
 );

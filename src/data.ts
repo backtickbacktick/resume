@@ -11,10 +11,13 @@ const data: {
         location: string;
         startedOn: number;
         finishedOn?: number;
-        page: number;
+        page?: number;
+        volunteer?: boolean;
     }[];
+    skillTypes: SkillType[];
     certifications: { title: string; source: string; issuedYear: number; expiresYear?: number }[];
 } = {
+    skillTypes: ['Language', 'Framework', 'Library'],
     skills: [
         { title: 'React', progress: 80, years: present - 2015, type: 'Framework' },
         { title: 'React Relay', progress: 50, years: 3, type: 'Framework' },
@@ -52,17 +55,21 @@ const data: {
     ],
     experience: [
         {
-            page: 1,
+            volunteer: true,
             companyName: 'VB Rescue',
             title: 'Emergency Medical Technician (Volunteer)',
-            description: ['Drive fast, save lives, and make a difference in the community.'],
+            description: [
+                'Conducted patient assessments, administered treatments, and monitored vital signs during transport.',
+                'Collaborated with emergency response teams and communicated effectively with medical personnel.',
+                'Delivered compassionate patient care and support to individuals and families during emergencies.',
+            ],
             location: '',
             startedOn: 1662004800000,
         },
         {
             page: 1,
             companyName: 'Butterfly Network, Inc.',
-            title: 'Senior Software Engineer (Front End Focused), Scrum Master',
+            title: 'Senior Software Engineer',
             description: [
                 'Collaborated with product managers, designers, and other stakeholders, to create technical specifications and manageable user stories with detailed acceptance criteria and anticipated QA effort.',
                 'Led cloud frontend development including maintenance and expansion of internal design system and React Component Library and cloud frontend SAAS.',
@@ -70,7 +77,6 @@ const data: {
             ],
             location: '',
             startedOn: 1630468800000,
-            finishedOn: 1719806400000,
         },
         {
             page: 1,
@@ -97,7 +103,7 @@ const data: {
             finishedOn: 1561953600000,
         },
         {
-            page: 2,
+            page: 1,
             companyName: 'Automatic Data Processing, Inc. (ADP)',
             title: 'Senior Application Developer',
             description: [

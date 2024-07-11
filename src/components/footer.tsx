@@ -1,4 +1,8 @@
-export default function Footer({ page }: { page: number }) {
+import { usePage } from './page';
+
+export default function Footer() {
+    const page = usePage();
+
     return (
         <footer>
             <div>Brian S. Reed</div>
