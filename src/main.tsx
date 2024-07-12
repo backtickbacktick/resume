@@ -33,10 +33,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <main data-col>
                 <Experience continued />
                 <Experience volunteer />
-                <p className="quote">
-                    <span>Everything is designed. Few things are designed well.</span>
-                    <span className="source">- Me</span>
-                </p>
             </main>
             <Footer />
         </Page>

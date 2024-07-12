@@ -42,6 +42,15 @@ a {
     flex-direction: column;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--accent-color);
+}
+
 #root {
     display: contents;
 }
@@ -53,31 +62,59 @@ a {
     width: 8.5in;
     height: 11in;
     padding: 0.5in;
+    page-break-inside: avoid;
+    overflow: hidden;
 
-    + .page {
-        page-break-before: always;
-        @media screen {
-            margin-top: 1rem;
+    > * {
+        width: 100%;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    // 2
+    > header {
+        height: 1.75in;
+        // 0.25
+        padding-bottom: 0.125in;
+        margin-bottom: 0.125in;
+    }
+
+    // 7.5
+    > main {
+        height: 7.5in;
+        flex-grow: 1;
+    }
+
+    // 0.5
+    > footer {
+        height: 0.5in;
+    }
+
+    // 2 + 7.5 + 0.5 = 10
+
+    & + .page {
+        // 1.25
+        > header {
+            height: 1.25in;
+            padding-bottom: 0.125in;
+            margin-bottom: 0.125in;
+        }
+
+        // 8
+        > main {
+            height: 8.25in;
+            flex-grow: 1;
         }
     }
 
     @media screen {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
         margin: 0 auto;
-    }
 
-    > * {
-        width: 100%;
+        & + .page {
+            margin-top: 1rem;
+        }
     }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--accent-color);
 }
 
 header {
@@ -86,16 +123,12 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    max-height: 2in;
-    flex-shrink: 0;
-    margin: 0 0 1rem;
-    gap: 1rem;
-    padding-bottom: 0.15in;
     border-bottom: 1px solid var(--accent-color);
 
     .intro {
         flex: 0 0 100%;
         font-weight: 200;
+        text-wrap: balance;
     }
 
     svg {
@@ -141,19 +174,12 @@ header {
 
 main {
     @extend .flex-row;
-    flex-shrink: 0;
     gap: 3rem;
-    height: 7.5in;
-    flex-grow: 1;
+    row-gap: 1.5rem;
 
     &[data-col] {
         @extend .flex-col;
     }
-}
-
-footer {
-    flex-shrink: 0;
-    height: 0.5in;
 }
 
 .skills-certifications {
@@ -212,7 +238,7 @@ footer {
 
 .experience {
     @extend .flex-col;
-    gap: 1.5rem;
+    gap: 1rem;
 
     aside {
         @extend .flex-col;
@@ -290,15 +316,5 @@ footer {
 
     div:nth-child(3) {
         font-weight: 200;
-    }
-}
-
-@media print {
-    @page {
-        margin: 0;
-    }
-
-    #root {
-        padding: 0;
     }
 }
