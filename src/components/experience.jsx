@@ -1,10 +1,19 @@
+import React from 'react';
 import data from '../data';
 import { usePage } from './page';
 
-export default function Experience({ volunteer, continued }: { volunteer?: boolean; continued?: boolean }) {
+/**
+ * @param {object}  props
+ * @param {boolean|undefined}  props.volunteer
+ * @param {boolean|undefined}  props.continued
+ */
+export default function Experience({ volunteer, continued }) {
     const items = data.experience.sort((a, b) => (a.startedOn > b.startedOn ? -1 : 1));
 
-    const formatDate = (dateTime: number) => {
+    /**
+     * @param {number}  dateTime
+     */
+    const formatDate = (dateTime) => {
         const date = new Date(dateTime);
 
         return date.toLocaleDateString('en-US', {

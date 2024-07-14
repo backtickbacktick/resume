@@ -1,7 +1,19 @@
-:root {
+@font-face {
     font-family: 'base';
+    src: url('/fonts/Metropolis-Regular.woff2');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'base';
+    src: url('/fonts/Metropolis-SemiBold.woff2');
+    font-weight: 600;
+}
+
+:root {
+    font-family: 'base', sans-serif;
+    font-weight: 300;
     line-height: 1.2;
-    font-weight: 400;
     font-size: 10pt;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -127,7 +139,6 @@ header {
 
     .intro {
         flex: 0 0 100%;
-        font-weight: 200;
         text-wrap: balance;
     }
 
@@ -151,7 +162,6 @@ header {
     }
 
     h2 {
-        font-weight: 400;
         font-size: 2rem;
         transform: skewX(1deg);
     }
@@ -294,7 +304,6 @@ main {
 
     span:nth-child(2) {
         font-size: 1.5rem;
-        font-weight: 200;
         color: var(--accent-grey);
     }
 }
@@ -315,6 +324,5 @@ footer {
     }
 
     div:nth-child(3) {
-        font-weight: 200;
     }
 }

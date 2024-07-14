@@ -1,22 +1,54 @@
+// @ts-check
 const present = new Date().getFullYear();
 
-export type SkillType = 'Language' | 'Framework' | 'Library' | 'Tool' | 'Other';
+/**
+ * A number, or a string containing a number.
+ * @typedef {('Language' | 'Framework' | 'Library' | 'Other')} SkillType
+ */
 
-const data: {
-    skills: { title: string; progress: number; years: number; type: SkillType }[];
-    experience: {
-        companyName: string;
-        title: string;
-        description: string[];
-        location: string;
-        startedOn: number;
-        finishedOn?: number;
-        page?: number;
-        volunteer?: boolean;
-    }[];
-    skillTypes: SkillType[];
-    certifications: { title: string; source: string; issuedYear: number; expiresYear?: number }[];
-} = {
+/**
+ * @type {{
+ *      title: string;
+ *      subtitle: string;
+ *      contactLinks: { title: string; href: string }[];
+ *      introduction: string;
+ *      skills: { title: string; progress: number; years: number; type: SkillType }[];
+ *      experience: {
+ *          companyName: string;
+ *          title: string;
+ *          description: string[];
+ *          location: string;
+ *          startedOn: number;
+ *          finishedOn?: number;
+ *          page?: number;
+ *          volunteer?: boolean;
+ *      }[];
+ *      skillTypes: SkillType[];
+ *      certifications: { title: string; source: string; issuedYear: number; expiresYear?: number }[];
+ * }}
+ *
+ */
+const data = {
+    title: 'Brian S. Reed',
+    subtitle: 'Senior Software Engineer',
+    contactLinks: [
+        {
+            title: 'me@iambrian.com',
+            href: 'mailto:me@iambrian.com',
+        },
+        {
+            title: '757-447-4447',
+            href: 'tel:+1-757-447-4447',
+        },
+        {
+            title: 'iambrian.com',
+            href: 'https://iambrian.com',
+        },
+    ],
+    introduction:
+        'Senior Software Engineer with over 15 years of software development experience in local Government, large corporations, and start-ups. ' +
+        'Self-taught, autodidact with passion for learning and exploration. ' +
+        'An Army veteran with the resourcefulness to overcoming any design and engineering challenge.',
     skillTypes: ['Language', 'Framework', 'Library'],
     skills: [
         { title: 'React', progress: 80, years: present - 2015, type: 'Framework' },

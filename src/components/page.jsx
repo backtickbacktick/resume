@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, useContext } from 'react';
+import React, { createContext, useContext } from 'react';
 
 const pageContext = createContext(1);
 
@@ -6,7 +6,12 @@ export function usePage() {
     return useContext(pageContext);
 }
 
-export default function Page(props: PropsWithChildren<{ page: number }>) {
+/**
+ * @param {object}  props
+ * @param {number}  props.page
+ * @param {ReactNode}  props.children
+ */
+export default function Page(props) {
     return (
         <div className="page">
             <pageContext.Provider value={props.page}>{props.children}</pageContext.Provider>
