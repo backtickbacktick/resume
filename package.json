@@ -4,7 +4,6 @@
     "main": "index.js",
     "scripts": {
         "build": "rm -rf dist && mkdir dist && cp -r public/. dist && npx babel-node src/build.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "npm run build && nodemon --watch src -e * --exec 'npx babel-node src/dev.js'",
         "deploy": "gh-pages -d dist"
     },
