@@ -57,7 +57,7 @@ export default function Experience({ volunteer, continued }) {
                         </div>
                         <ul>
                             {item.description.map((desc, index) => (
-                                <li key={index}>{desc}</li>
+                                <li key={index}>⇢ &nbsp;{desc}</li>
                             ))}
                         </ul>
                     </aside>

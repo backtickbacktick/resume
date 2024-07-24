@@ -258,20 +258,6 @@ main {
     ul {
         @extend .flex-col;
         gap: 0.5rem;
-
-        li {
-            &::before {
-                content: ' ';
-                color: var(--accent-color);
-                margin-right: 0.125rem;
-                // triangle border
-                display: inline-block;
-                width: 0;
-                height: 0;
-                border: 0.35rem solid transparent;
-                border-left-color: var(--accent-color);
-            }
-        }
     }
 
     .company-time {
